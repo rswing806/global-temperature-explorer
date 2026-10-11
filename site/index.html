@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How much warmer is the world? - global temperature explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div id="stripes" class="stripes" role="img"></div>
+    <div class="wrap intro">
+      <h1>How much warmer is the world than it used to be?</h1>
+      <p class="lede">Each stripe above is one year of global temperature, from the earliest record to the most recent complete year. Blue years were cooler than the 1951-1980 average and red years were warmer. Use the explorer below to look at any stretch of the record.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section aria-labelledby="explore">
+      <h2 id="explore">Explore the record</h2>
+      <div class="controls">
+        <label>Measure
+          <select id="series">
+            <option value="Annual">Whole year</option>
+            <option value="DJF">Winter (Dec-Feb)</option>
+            <option value="MAM">Spring (Mar-May)</option>
+            <option value="JJA">Summer (Jun-Aug)</option>
+            <option value="SON">Autumn (Sep-Nov)</option>
+          </select>
+        </label>
+        <label>From <output id="fromOut"></output>
+          <input id="from" type="range">
+        </label>
+        <label>To <output id="toOut"></output>
+          <input id="to" type="range">
+        </label>
+        <label class="check"><input id="smooth" type="checkbox" checked> Show 11-year average</label>
+      </div>
+      <div class="chartbox"><canvas id="chart" aria-label="Bar chart of yearly temperature anomalies" role="img"></canvas></div>
+      <p id="trend" class="callout" aria-live="polite"></p>
+    </section>
+
+    <section aria-labelledby="found">
+      <h2 id="found">What the data shows</h2>
+      <ul id="findings" class="findings"></ul>
+      <h3>Decade by decade</h3>
+      <table class="decades">
+        <caption>Average anomaly per decade for the measure selected above</caption>
+        <thead><tr><th scope="col">Decade</th><th scope="col">Average</th><th scope="col"><span class="sr">Bar</span></th></tr></thead>
+        <tbody id="decades"></tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="method">
+      <h2 id="method">Where the numbers come from</h2>
+      <p id="source"></p>
+      <p>An <em>anomaly</em> is how far a year's global average temperature is from the 1951-1980 average. It says nothing about the absolute temperature of any one place. The trend shown above is a straight line fitted to the selected years by least squares, so it summarizes the direction of change but not every wiggle. Seasonal values for the earliest year can be missing because they need December of the year before.</p>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="data.js"></script>
+  <script src="stats.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

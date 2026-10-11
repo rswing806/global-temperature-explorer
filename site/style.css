@@ -1,0 +1,38 @@
+:root { --ink: #1b1f24; --muted: #57606a; --bg: #fbfcfd; --line: #dde2e8; --radius: 6px; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.65 "IBM Plex Sans", system-ui, sans-serif; }
+h1, h2, h3 { font-family: "IBM Plex Serif", Georgia, serif; font-weight: 600; line-height: 1.15; }
+h1 { font-size: clamp(2rem, 5.5vw, 3.6rem); margin: 0 0 1rem; max-width: 20ch; letter-spacing: -.01em; }
+h2 { font-size: 1.7rem; margin: 3rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2rem 0 .5rem; }
+:focus-visible { outline: 3px solid #2166ac; outline-offset: 2px; }
+
+.wrap { max-width: 56rem; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2rem); }
+
+/* the warming stripes are the memorable element */
+.stripes { display: flex; height: clamp(10rem, 34vh, 20rem); background: #eee; }
+.stripes span { flex: 1; min-width: 0; }
+.intro { padding-top: 2rem; }
+.lede { max-width: 42rem; color: var(--muted); font-size: 1.15rem; }
+
+.controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem 1.5rem; align-items: end; margin-bottom: 1rem; }
+label { display: grid; gap: .3rem; font-weight: 600; }
+label output { font-weight: 400; color: var(--muted); display: inline; margin-left: .3rem; }
+.check { display: flex; align-items: center; gap: .5rem; }
+select { font: inherit; padding: .5rem; border: 1.5px solid var(--line); border-radius: var(--radius); background: #fff; }
+input[type=range] { width: 100%; accent-color: #b2182b; }
+
+.chartbox { position: relative; height: 22rem; }
+.callout { margin: 1rem 0 0; padding: .75rem 1rem; border-left: 4px solid #b2182b; background: #fff; }
+.findings { padding-left: 1.2rem; }
+.findings li { margin: .6rem 0; max-width: 46rem; }
+
+.decades { width: 100%; border-collapse: collapse; }
+.decades caption { text-align: left; color: var(--muted); font-size: .95rem; padding-bottom: .5rem; }
+.decades th, .decades td { padding: .35rem .5rem; border-top: 1px solid var(--line); text-align: left; font-weight: 400; }
+.decades tbody th { font-weight: 600; white-space: nowrap; }
+.decades td:last-child { width: 55%; }
+.bar { display: block; height: .9rem; border-radius: 2px; border: 1px solid rgba(0,0,0,.15); min-width: 2px; }
+.sr { position: absolute; left: -9999px; }
+#method { padding-bottom: 4rem; }
+#method p { max-width: 46rem; }
