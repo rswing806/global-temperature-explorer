@@ -78,8 +78,19 @@ An anomaly is how far a year's global average temperature is from the 1951-1980 
 
 ## What I learned
 
-<!-- Write this part yourself, in your own words. Name one or two real problems you ran into
-     and how you solved them. Admissions readers care about this section most. -->
+-Data collection: retrieving climate data from NASA's GISTEMP dataset.
+
+-Data cleaning: using pandas to handle, organize and prepare datasets for analysis.
+
+-Numerical computing: using NumPy for calculations on temperature data.
+
+-Trend analysis: calculating temperature changes over time and comparing decades.
+
+-Data visualization: building warming stripes and interactive charts with Chart.js.
+
+-Interactive interfaces: letting users select seasons and periods to explore different results.
+
+-Scientific reasoning: understanding the difference between observed data, calculated trends and the limitations of a dataset.
 
 ## Ideas for next steps
 
